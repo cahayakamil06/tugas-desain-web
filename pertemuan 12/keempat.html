@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penerimaan Pegawai</title>
+    <script>
+        function cekPenerimaan() {
+            var jenisKelamin = document.getElementById('jenisKelamin').value;
+            var tinggiBadan = parseInt(document.getElementById('tinggiBadan').value);
+            var beratBadan = parseInt(document.getElementById('beratBadan').value);
+            var ipk = parseFloat(document.getElementById('ipk').value);
+            var pendidikan = document.getElementById('pendidikan').value;
+
+            var idealBB = tinggiBadan - 110;
+            var diterima = false;
+
+            if (jenisKelamin === 'Laki-laki') {
+                if (tinggiBadan >= 170 && tinggiBadan <= 179 && beratBadan === idealBB && ipk >= 3 && ipk <= 4 && (pendidikan === 'D3' || pendidikan === 'S1')) {
+                    diterima = true;
+                }
+            } else if (jenisKelamin === 'Perempuan') {
+                if (tinggiBadan >= 160 && tinggiBadan <= 170 && beratBadan === idealBB && ipk >= 3 && ipk <= 4 && (pendidikan === 'D3' || pendidikan === 'S1')) {
+                    diterima = true;
+                }
+            }
+
+            if (diterima) {
+                document.getElementById('hasil').innerText = 'Selamat, Anda diterima!';
+            } else {
+                document.getElementById('hasil').innerText = 'Maaf, Anda tidak memenuhi syarat.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Penerimaan Pegawai</h1>
+    <form>
+        <label for="jenisKelamin">Jenis Kelamin:</label>
+        <select id="jenisKelamin" name="jenisKelamin">
+            <option value="Laki-laki">Laki-laki</option>
+            <option value="Perempuan">Perempuan</option>
+        </select><br><br>
+        <label for="tinggiBadan">Tinggi Badan (cm):</label>
+        <input type="number" id="tinggiBadan" name="tinggiBadan"><br><br>
+        <label for="beratBadan">Berat Badan (kg):</label>
+        <input type="number" id="beratBadan" name="beratBadan"><br><br>
+        <label for="ipk">IPK:</label>
+        <input type="number" step="0.01" id="ipk" name="ipk"><br><br>
+        <label for="pendidikan">Pendidikan:</label>
+        <select id="pendidikan" name="pendidikan">
+            <option value="D3">D3</option>
+            <option value="S1">S1</option>
+        </select><br><br>
+        <button type="button" onclick="cekPenerimaan()">Cek Penerimaan</button>
+    </form>
+    <p id="hasil"></p>
+</body>
+</html>

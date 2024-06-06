@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Zodiak</title>
+    <script>
+        function cekZodiak() {
+            var tanggal = parseInt(document.getElementById('tanggal').value);
+            var bulan = parseInt(document.getElementById('bulan').value);
+
+            var zodiak = '';
+            var kesehatan = '';
+            var asmara = '';
+            var keuangan = '';
+            var karier = '';
+
+            if ((tanggal >= 21 && bulan == 3) || (tanggal <= 19 && bulan == 4)) {
+                zodiak = 'Aries';
+                kesehatan = 'Energi tinggi, hindari stres.';
+                asmara = 'Romantis dan bersemangat.';
+                keuangan = 'Investasi bijak bisa menguntungkan.';
+                karier = 'Kesempatan promosi mungkin ada.';
+            } else if ((tanggal >= 20 && bulan == 4) || (tanggal <= 20 && bulan == 5)) {
+                zodiak = 'Taurus';
+                kesehatan = 'Perhatikan kesehatan pencernaan.';
+                asmara = 'Kesetiaan sangat penting.';
+                keuangan = 'Stabil, ada peluang penghasilan tambahan.';
+                karier = 'Kerja keras membuahkan hasil.';
+            } // Tambahkan kondisi untuk zodiak lainnya...
+
+            document.getElementById('outputZodiak').innerText = 'Zodiak: ' + zodiak;
+            document.getElementById('outputKesehatan').innerText = 'Kesehatan: ' + kesehatan;
+            document.getElementById('outputAsmara').innerText = 'Asmara: ' + asmara;
+            document.getElementById('outputKeuangan').innerText = 'Keuangan: ' + keuangan;
+            document.getElementById('outputKarier').innerText = 'Karier: ' + karier;
+        }
+    </script>
+</head>
+<body>
+    <h1>Game Zodiak</h1>
+    <form>
+        <label for="tanggal">Tanggal Lahir:</label>
+        <input type="number" id="tanggal" name="tanggal" min="1" max="31"><br><br>
+        <label for="bulan">Bulan Lahir:</label>
+        <input type="number" id="bulan" name="bulan" min="1" max="12"><br><br>
+        <button type="button" onclick="cekZodiak()">Cek Zodiak</button>
+    </form>
+    <p id="outputZodiak"></p>
+    <p id="outputKesehatan"></p>
+    <p id="outputAsmara"></p>
+    <p id="outputKeuangan"></p>
+    <p id="outputKarier"></p>
+</body>
+</html>

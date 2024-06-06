@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+</head>
+<title>Document</title>
+</head>
+
+<body>
+    <p id="nilai"></p>
+
+
+    <script type="text/javascript">
+         const pnilai = document.getElementById("nilai");
+
+        var nilais = prompt("Masukkan nilai :");
+        var nilai = Number(nilais);
+        if (nilai>=80)
+            pnilai.innerText = `Nilai kamu a`;
+        else if (nilai>=70)
+             pnilai.innerText = `Nilai kamu b`;
+        else if (nilai>=60)
+              pnilai.innerText = `Nilai kamu c`;
+        else if (nilai>=50)
+             pnilai.innerText = `Nilai kamu d`;
+        else
+        pnilai.innerText = Gagal;
+            
+    </script>
+
+</body>
+
+</html>

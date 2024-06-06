@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var harga=1000;
+        var jumlah=3;
+        var diskon=0;
+        var totalbayar=0;
+if (jumlah>=3){
+     diskon = 0.10 * harga * jumlah;
+}   
+else {
+    diskon=0;
+}     
+totalbayar = (harga * jumlah) - diskon;
+    document.write("Harga Per item :" + harga);
+    document.write('<br>')
+    document.write("jumlah beli :" + jumlah);
+    document.write('<br>')
+    document.write("diskon :" + diskon);
+    document.write('<br>')
+    document.write("total bayar :" + totalbayar);
+    </script>
+</body>
+</html>

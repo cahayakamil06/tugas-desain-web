@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing Online</title>
+    <script>
+        function hitungBilling() {
+            var totalDetik = parseInt(document.getElementById('totalDetik').value);
+            var pulsaPerDetik = 45;
+            var biayaPerPulsa = 30;
+
+            var jumlahPulsa = Math.ceil(totalDetik / pulsaPerDetik);
+            var totalBiaya = jumlahPulsa * biayaPerPulsa;
+
+            var jam = Math.floor(totalDetik / 3600);
+            totalDetik %= 3600;
+            var menit = Math.floor(totalDetik / 60);
+            var detik = totalDetik % 60;
+
+            document.getElementById('hasilWaktu').innerText = 'Pemakaian: ' + jam + ' jam, ' + menit + ' menit, ' + detik + ' detik';
+            document.getElementById('totalBiaya').innerText = 'Total Biaya: Rp ' + totalBiaya;
+        }
+    </script>
+</head>
+<body>
+    <h1>Billing Online</h1>
+    <form>
+        <label for="totalDetik">Jumlah Detik Pemakaian:</label>
+        <input type="number" id="totalDetik" name="totalDetik" value="10000"><br><br>
+        <button type="button" onclick="hitungBilling()">Hitung</button>
+    </form>
+    <p id="hasilWaktu"></p>
+    <p id="totalBiaya"></p>
+</body>
+</html>
