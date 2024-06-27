@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    var gajiperhari = 50000;
+    var uangmakanperhari=5000;
+    var Lemburjam1= 25000;
+    var Lemburjam2=35000;
+    
+    var harikerja=parseInt(prompt("Masukan Jumlah Hari Kerja Dalam Seminggu :"));
+    var totaljamkerja=parseInt(prompt("Masukan Jumlah Total Jam Kerja Dalam Seminggu :"));
+    var totaljamlembur=parseInt(prompt("Masukan Jumlah Total Jam Lembur Dalam Seminggu :"));
+    var totalgaji=0;
+
+    totalgaji = gajiperhari * harikerja;
+    
+    var gajilembur=0;
+    if (totaljamlembur > 0 && totaljamlembur <=2){
+        gajilembur = totaljamlembur * Lemburjam1;
+    }else if (totaljamlembur >=3){
+        gajilembur=(2*Lemburjam1) + ((totaljamlembur - 2) * Lemburjam2);
+    }
+    totalgaji += gajilembur;
+    if(totaljamkerja>=20){
+        var Totaluangmakan = uangmakanperhari * harikerja;
+        totalgaji +=Totaluangmakan;
+    }
+
+    document.write("Gaji Lembur" + gajilembur)
+    document.write("<br>");
+    document.write("Total Uang Makan" + Totaluangmakan)
+    document.write("<br>");
+    document.write("Total Gaji:" + totalgaji);
+    </script>
+

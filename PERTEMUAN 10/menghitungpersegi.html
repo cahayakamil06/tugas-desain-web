@@ -1,0 +1,17 @@
+<body>
+    <script type="text/javascript">
+        function hitungpersegi (sisi) {
+            var luas = sisi * sisi;
+            var keliling = 4 * sisi;
+            return {
+                luas: luas,
+            keliling: keliling
+            };
+        }
+
+        var sisi = 5 ;
+        var hasil = hitungpersegi(sisi);
+        alert("Luas Persegi :" + hasil.luas);
+        alert("keliling persegi :" + hasil.keliling);
+    </script>
+</body>
